@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#10233f">
+
+<title>Ferraço Ferro e Aço — Distribuidora de ferro e aço em São Bento do Sul (SC)</title>
+<meta name="description" content="Chapas, barras, tubos, perfis, cantoneiras e aços especiais em São Bento do Sul (SC). Estoque diversificado para construção, serralheria, mecânica e indústria. Orçamento pelo WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ferraço Ferro e Aço — São Bento do Sul (SC)">
+<meta property="og:description" content="Ferro e aço na medida certa, com pronta entrega. Peça seu orçamento pelo WhatsApp.">
+<meta property="og:image" content="imagens/foto-hero.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ==================================================================
+   CORES E FONTES — os DADOS da empresa ficam no objeto `empresa`
+   (no <script> no início do body). Cores também podem ser trocadas lá.
+   ================================================================== */
+:root{
+  --cor-primaria:  #10233f;   /* azul aço Ferraço (base da marca)       */
+  --cor-secundaria:#4d86d6;   /* azul-aço claro (único acento)          */
+  --wa:#16994f; --wa-escuro:#0f7d3f;
+
+  --preto: color-mix(in srgb, var(--cor-primaria) 62%, #000);   /* plate quase preto */
+  --steel: var(--cor-primaria);
+  --steel-2: color-mix(in srgb, var(--cor-primaria) 88%, #fff 4%);
+  --papel:#eceef1; --papel-2:#f5f6f8;
+  --tinta:#12171d; --tinta-2:#5a6672;
+  --claro:#eef1f4; --claro-2:#8f9caa;
+  --latao:var(--cor-secundaria);
+  --linha-d: color-mix(in srgb, var(--latao) 34%, transparent);
+  --linha-l:#d5d9de;
+
+  --f-display:"Anton", Impact, system-ui, sans-serif;
+  --f-corpo:"Hanken Grotesk", system-ui, "Segoe UI", sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, "Courier New", monospace;
+
+  --max:1280px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--f-corpo);background:var(--papel);color:var(--tinta);
+  line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{margin:0;font-weight:400}
+
+.wrap{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:clamp(20px,4vw,56px)}
+.band{padding-block:clamp(76px,10vw,150px);position:relative}
+.band--dark{background:var(--steel);color:var(--claro)}
+.band--black{background:var(--preto);color:var(--claro)}
+.band--light{background:var(--papel);color:var(--tinta)}
+.band--paper2{background:var(--papel-2)}
+
+/* ---- tipografia display ---- */
+.display{font-family:var(--f-display);text-transform:uppercase;line-height:.92;letter-spacing:.005em}
+.mono{font-family:var(--f-mono)}
+.kicker{font-family:var(--f-mono);font-size:.74rem;font-weight:500;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--latao);display:inline-flex;align-items:center;gap:.8em}
+.kicker::before{content:"";width:30px;height:1px;background:var(--latao)}
+
+/* cabeçalho de capítulo de cada seção */
+.chap{display:flex;align-items:baseline;gap:clamp(14px,2.4vw,30px);margin-bottom:clamp(34px,5vw,64px);flex-wrap:wrap}
+.chap-n{font-family:var(--f-mono);font-size:.9rem;font-weight:600;color:var(--latao);letter-spacing:.1em;padding-top:.5em}
+.chap-t{font-family:var(--f-display);text-transform:uppercase;line-height:.9;
+  font-size:clamp(2.6rem,7vw,6rem);letter-spacing:.004em}
+.chap-meta{font-family:var(--f-mono);font-size:.8rem;color:var(--tinta-2);letter-spacing:.06em;margin-left:auto;align-self:flex-end}
+.band--dark .chap-meta,.band--black .chap-meta{color:var(--claro-2)}
+
+/* ---- botões WhatsApp ---- */
+.wa{display:inline-flex;align-items:center;gap:.6em;justify-content:center;font-family:var(--f-corpo);
+  font-weight:700;font-size:1rem;letter-spacing:.01em;background:var(--wa);color:#fff;padding:16px 26px;
+  border:0;border-radius:2px;cursor:pointer;min-height:52px;transition:background .18s,transform .12s}
+.wa:hover{background:var(--wa-escuro);transform:translateY(-2px)}
+.wa svg{width:20px;height:20px}
+.wa--lg{font-size:1.08rem;padding:19px 32px;min-height:58px}
+/* link-CTA estilo editorial (sublinhado grosso) */
+.linkcta{display:inline-flex;align-items:center;gap:.55em;font-family:var(--f-mono);font-weight:600;
+  font-size:.86rem;letter-spacing:.12em;text-transform:uppercase;padding-bottom:6px;
+  border-bottom:2px solid var(--latao);color:inherit}
+.linkcta svg{width:16px;height:16px;color:var(--latao);transition:transform .2s}
+.linkcta:hover svg{transform:translateX(5px)}
+
+.stars{display:inline-flex;gap:2px;color:var(--latao)}
+.stars svg{width:15px;height:15px}
+.gmark{width:15px;height:15px;flex:0 0 auto;vertical-align:middle}
+
+/* placeholder automático quando a foto não existe */
+.fb{background:repeating-linear-gradient(135deg,#c9ccd1 0 14px,#c1c4c9 14px 28px);
+  color:#5a626c;display:flex;align-items:center;justify-content:center;font-family:var(--f-mono);
+  font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;text-align:center;padding:16px}
+.fb.dark{background:repeating-linear-gradient(135deg,#212c38 0 14px,#1a2430 14px 28px);color:#8f9cab}
+
+/* índice lateral fixo (scrollspy) — só desktop */
+.idx{position:fixed;right:22px;top:50%;transform:translateY(-50%);z-index:35;display:none;flex-direction:column;gap:14px}
+.idx a{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.1em;color:var(--tinta-2);display:flex;align-items:center;gap:8px}
+.idx a::after{content:"";width:14px;height:1px;background:currentColor;opacity:.5;transition:width .2s}
+.idx a.on{color:var(--latao)}
+.idx a.on::after{width:30px;opacity:1}
+@media (min-width:1180px){.idx{display:flex}}
+
+/* ================= HEADER ================= */
+.top{position:absolute;top:0;left:0;right:0;z-index:30;color:var(--claro)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:84px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-logo{height:46px;width:auto;display:block}
+.brand .mk{width:42px;height:42px;flex:0 0 auto;border:2px solid var(--latao);display:grid;place-items:center;
+  font-family:var(--f-display);color:var(--latao);font-size:.95rem;letter-spacing:-.03em}
+.brand b{font-family:var(--f-display);font-size:1.16rem;letter-spacing:.01em;line-height:1;color:#fff;text-transform:uppercase}
+.brand small{display:block;font-family:var(--f-mono);font-size:.6rem;letter-spacing:.18em;color:var(--claro-2);text-transform:uppercase;margin-top:4px}
+@media (max-width:720px){.brand-logo{height:38px}}
+.top nav{display:flex;align-items:center;gap:26px}
+.top nav a.navlink{font-family:var(--f-mono);font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--claro-2)}
+.top nav a.navlink:hover{color:#fff}
+.top .wa{padding:11px 18px;min-height:44px;font-size:.9rem}
+@media (max-width:900px){.top nav a.navlink{display:none}.top .wrap{height:70px}}
+
+/* ================= 00 · HERO ================= */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;background:var(--preto);color:#fff;overflow:hidden}
+.hero-media{position:absolute;inset:0;z-index:0}
+.hero-media img,.hero-media .fb{width:100%;height:100%;object-fit:cover}
+.hero-media::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg, rgba(10,14,20,.55) 0%, rgba(10,14,20,.2) 34%, rgba(10,14,20,.86) 88%),
+                    linear-gradient(90deg, rgba(10,14,20,.7) 0%, transparent 55%)}
+.hero-grid{position:absolute;inset:0;z-index:1;opacity:.35;pointer-events:none;
+  background-image:linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px);
+  background-size:44px 44px;mask-image:radial-gradient(140% 120% at 8% 92%,#000 45%,transparent 100%)}
+.hero .wrap{position:relative;z-index:2;width:100%;padding-block:120px 40px}
+/* metadados nos cantos */
+.hero-tl{position:absolute;top:104px;left:0;z-index:2}
+.hero-tl .wrap{padding-block:0}
+.hero-coord{font-family:var(--f-mono);font-size:.76rem;letter-spacing:.14em;color:var(--claro-2);text-transform:uppercase}
+.hero-coord b{color:#fff;font-weight:500}
+.hero-stamp{position:absolute;top:100px;right:clamp(20px,4vw,56px);z-index:3;text-align:right;
+  font-family:var(--f-mono);font-size:.72rem;letter-spacing:.1em;color:var(--claro-2);text-transform:uppercase}
+.hero-stamp b{font-family:var(--f-display);font-size:2rem;color:#fff;display:block;line-height:1;margin-bottom:2px}
+.hero h1{font-family:var(--f-display);text-transform:uppercase;font-size:clamp(3.4rem,13vw,10.5rem);line-height:.86;
+  letter-spacing:.004em;margin:0;max-width:14ch}
+.hero h1 em{font-style:normal;color:var(--latao)}
+.hero .sub{max-width:46ch;font-size:clamp(1.05rem,2.2vw,1.28rem);color:var(--claro);margin:26px 0 30px}
+.hero-cta{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+/* barra datum no rodapé da hero */
+.hero-datum{position:relative;z-index:2;border-top:1px solid var(--linha-d);margin-top:44px}
+.hero-datum .row{display:flex;flex-wrap:wrap;gap:10px 30px;align-items:center;padding-top:16px;
+  font-family:var(--f-mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--claro-2)}
+.hero-datum .row b{color:#fff;font-weight:500}
+.hero-scroll{margin-left:auto;display:inline-flex;align-items:center;gap:8px}
+.hero-scroll svg{width:14px;height:14px;color:var(--latao);animation:bob 1.8s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+
+/* linha de avaliação da hero (aparece só no mobile) */
+.hero-rate{display:none}
+
+/* ================= 01 · COMO FUNCIONA ================= */
+.passos-head{display:grid;grid-template-columns:1.25fr 1fr;grid-template-areas:"k k" "t p";
+  gap:10px 40px;align-items:end;margin-bottom:clamp(34px,5vw,60px)}
+.passos-head .kicker{grid-area:k;align-self:start}
+.passos-t{grid-area:t;font-family:var(--f-display);text-transform:uppercase;line-height:.9;
+  letter-spacing:.004em;font-size:clamp(2.4rem,6vw,5rem)}
+.passos-head p{grid-area:p;font-size:1.12rem;max-width:44ch;margin:0 0 8px;color:var(--tinta-2)}
+.passos{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);
+  gap:clamp(18px,2.4vw,30px);counter-reset:none}
+.passos li{border-top:2px solid var(--tinta);padding-top:20px;display:flex;gap:16px;align-items:flex-start}
+.passo-n{font-family:var(--f-display);font-size:clamp(2rem,3vw,2.8rem);color:var(--latao);line-height:.85;flex:0 0 auto}
+.passos h3{font-family:var(--f-corpo);font-weight:700;font-size:1.24rem;text-transform:none;margin:0 0 6px}
+.passos p{margin:0;color:var(--tinta-2);font-size:1rem}
+@media (max-width:760px){
+  .passos-head{grid-template-columns:1fr;grid-template-areas:"k" "t" "p";gap:12px}
+  .passos-head p{margin-bottom:0}
+  .passos{grid-template-columns:1fr;gap:0}
+  .passos li{border-top:1px solid var(--linha-l);padding:18px 0}
+  .passos li:first-child{border-top:2px solid var(--tinta)}
+}
+
+/* ================= 02 · SERVIÇOS ================= */
+.s-serv{--pad:clamp(22px,3vw,40px)}
+.serv-grid{display:grid;grid-template-columns:.42fr 1fr;gap:clamp(30px,5vw,70px);align-items:start}
+.serv-aside{position:sticky;top:40px}
+.serv-aside .chap{flex-direction:column;align-items:flex-start;gap:6px;margin:0}
+.serv-aside .chap-t{font-size:clamp(2.4rem,5vw,4rem)}
+.serv-aside p{color:var(--claro-2);margin:22px 0 0;max-width:30ch}
+.serv-list{border-top:1px solid var(--linha-d)}
+.serv{position:relative;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:clamp(16px,3vw,40px);
+  padding:clamp(24px,3.4vw,42px) 4px;border-bottom:1px solid var(--linha-d);color:var(--claro);overflow:hidden;transition:padding .25s}
+.serv-n{font-family:var(--f-mono);font-size:1rem;font-weight:600;color:var(--latao);letter-spacing:.06em}
+.serv-main h3{font-family:var(--f-display);text-transform:uppercase;font-size:clamp(1.7rem,4vw,3rem);
+  line-height:.95;letter-spacing:.006em;transition:transform .3s,color .2s}
+.serv-main p{color:var(--claro-2);margin:6px 0 0;font-size:1rem;max-width:46ch;transition:opacity .25s}
+.serv-arrow{width:44px;height:44px;border:1px solid var(--linha-d);border-radius:50%;display:grid;place-items:center;
+  color:var(--latao);transition:background .25s,color .25s,transform .25s;flex:0 0 auto}
+.serv-arrow svg{width:20px;height:20px}
+.serv-thumb{position:absolute;right:78px;top:50%;transform:translateY(-50%) scale(.96);width:230px;height:150px;
+  border-radius:2px;overflow:hidden;opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;
+  box-shadow:0 20px 50px -20px rgba(0,0,0,.7)}
+.serv-thumb img,.serv-thumb .fb{width:100%;height:100%;object-fit:cover}
+@media (hover:hover){
+  .serv:hover{padding-inline:clamp(16px,2vw,28px) 4px}
+  .serv:hover .serv-main h3{transform:translateX(10px);color:#fff}
+  .serv:hover .serv-main p{opacity:.35}
+  .serv:hover .serv-arrow{background:var(--latao);color:#0d131b;transform:rotate(-45deg)}
+  .serv:hover .serv-thumb{opacity:1;transform:translateY(-50%) scale(1)}
+}
+@media (max-width:860px){
+  .serv-grid{grid-template-columns:1fr;gap:26px}
+  .serv-aside{position:static}
+  .serv{grid-template-columns:auto 1fr auto;gap:14px;padding:20px 2px}
+  .serv-main p{font-size:.92rem}
+  .serv-thumb{display:none}
+  .serv-arrow{width:38px;height:38px}
+}
+
+/* ================= 03 · PORTFÓLIO ================= */
+.folio{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(10px,1.4vw,18px);grid-auto-rows:clamp(120px,15vw,190px)}
+.plate{position:relative;overflow:hidden;background:#d7dbe0;cursor:pointer;border-radius:2px}
+.plate img,.plate .fb{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.plate:hover img{transform:scale(1.06)}
+.plate::before{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,rgba(13,19,27,.05) 40%,rgba(13,19,27,.82));opacity:.9;transition:opacity .3s}
+.plate:hover::before{opacity:1}
+.plate figcaption{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:clamp(14px,1.6vw,22px);display:flex;
+  align-items:flex-end;justify-content:space-between;gap:12px;color:#fff}
+.plate .code{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.12em;color:var(--latao)}
+.plate .ttl{font-family:var(--f-display);text-transform:uppercase;line-height:.95;font-size:clamp(1rem,1.8vw,1.5rem);margin-top:5px}
+.plate .loc{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.08em;color:var(--claro-2);text-transform:uppercase;margin-top:5px}
+.plate .see{width:38px;height:38px;border:1px solid rgba(255,255,255,.5);border-radius:50%;display:grid;place-items:center;
+  flex:0 0 auto;opacity:0;transform:translateY(8px);transition:.3s}
+.plate .see svg{width:18px;height:18px}
+.plate:hover .see{opacity:1;transform:none}
+/* spans editoriais */
+.p-hero{grid-column:span 8;grid-row:span 3}
+.p-tall{grid-column:span 4;grid-row:span 3}
+.p-wide{grid-column:span 6;grid-row:span 2}
+.p-std{grid-column:span 3;grid-row:span 2}
+.p-std2{grid-column:span 3;grid-row:span 2}
+@media (max-width:860px){
+  .folio{grid-template-columns:repeat(2,1fr);grid-auto-rows:44vw;gap:10px}
+  .p-hero{grid-column:span 2;grid-row:span 2}
+  .p-tall,.p-wide,.p-std,.p-std2{grid-column:span 1;grid-row:span 1}
+  .plate .see{display:none}
+}
+
+/* ================= 04 · PROVA SOCIAL ================= */
+.prova .wrap{display:grid;grid-template-columns:auto 1fr;gap:clamp(36px,6vw,90px);align-items:center}
+.selo{width:clamp(150px,20vw,210px);aspect-ratio:1;border:2px solid var(--latao);position:relative;
+  display:grid;place-items:center;text-align:center;flex:0 0 auto}
+.selo::after{content:"";position:absolute;inset:9px;border:1px solid var(--linha-d)}
+.selo .n{font-family:var(--f-display);font-size:clamp(3.2rem,7vw,5rem);color:#fff;line-height:.9}
+.selo .lb{font-family:var(--f-mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--claro-2);margin-top:8px}
+.selo .stars{margin-top:8px}
+.prova-quote blockquote{font-family:var(--f-display);text-transform:uppercase;line-height:.98;
+  font-size:clamp(1.7rem,3.6vw,3rem);margin:0;letter-spacing:.004em}
+.prova-quote .who{font-family:var(--f-mono);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--claro-2);margin-top:22px}
+.prova-quote .who b{color:#fff}
+.prova-sec{margin-top:26px;padding-top:22px;border-top:1px solid var(--linha-d);
+  display:flex;flex-wrap:wrap;gap:14px 26px;align-items:center;justify-content:space-between}
+.prova-sec p{margin:0;color:var(--claro-2);font-size:.98rem;max-width:52ch}
+.prova-sec .tag-ex{color:var(--latao)}
+@media (max-width:760px){.prova .wrap{grid-template-columns:1fr;gap:30px}}
+
+/* ================= 05 · SOBRE (title block) ================= */
+.sobre .wrap{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch;
+  border:1px solid var(--linha-l)}
+.sobre-media{position:relative;min-height:420px}
+.sobre-media img,.sobre-media .fb{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.sobre-body{padding:clamp(28px,4vw,56px);display:flex;flex-direction:column;justify-content:center}
+.sobre-body .chap{margin-bottom:22px}
+.sobre-body .chap-t{font-size:clamp(2rem,4vw,3.2rem)}
+.sobre-body p{font-size:1.1rem;margin:0 0 16px}
+/* bloco de carimbo/título de projeto */
+.titleblock{margin-top:22px;border:1px solid var(--linha-l);border-collapse:collapse;width:100%;
+  font-family:var(--f-mono);font-size:.78rem}
+.titleblock tr{border-bottom:1px solid var(--linha-l)}
+.titleblock th{text-align:left;letter-spacing:.12em;text-transform:uppercase;color:var(--tinta-2);
+  font-weight:500;padding:11px 14px;width:38%;border-right:1px solid var(--linha-l);vertical-align:top}
+.titleblock td{padding:11px 14px;color:var(--tinta);font-family:var(--f-corpo);font-size:.92rem}
+@media (max-width:820px){.sobre .wrap{grid-template-columns:1fr}.sobre-media{min-height:260px}}
+
+/* ================= 06 · CTA FINAL ================= */
+.cta .wrap{text-align:center;display:grid;justify-items:center;position:relative;z-index:2}
+.cta h2{font-family:var(--f-display);text-transform:uppercase;line-height:.9;letter-spacing:.004em;
+  font-size:clamp(2.8rem,9vw,7.5rem);max-width:14ch}
+.cta h2 em{font-style:normal;color:var(--latao)}
+.cta p{color:var(--claro-2);font-size:1.16rem;margin:22px 0 32px;max-width:44ch}
+.cta-tel{margin-top:22px;font-family:var(--f-mono);font-size:.84rem;letter-spacing:.1em;text-transform:uppercase;color:var(--claro-2)}
+.cta-tel a{color:#fff}
+.cta .hero-grid{mask-image:radial-gradient(90% 130% at 50% 100%,#000,transparent)}
+
+/* ================= FOOTER ================= */
+footer{background:var(--preto);color:var(--claro-2);border-top:1px solid var(--linha-d)}
+footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px;padding-block:56px}
+footer .brand{margin-bottom:16px}
+footer h4{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--latao);margin:0 0 14px}
+footer .row{margin:9px 0;font-size:.95rem;display:flex;gap:9px;align-items:center}
+footer .row svg{width:15px;height:15px;color:var(--latao);flex:0 0 auto}
+footer a:hover{color:var(--latao)}
+.foot-b{border-top:1px solid var(--linha-d)}
+.foot-b .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;padding-block:18px;
+  font-family:var(--f-mono);font-size:.72rem;letter-spacing:.05em;color:var(--claro-2)}
+@media (max-width:820px){footer .wrap{grid-template-columns:1fr}}
+
+/* WhatsApp flutuante (desktop) + barra fixa (mobile) */
+.fab{position:fixed;right:22px;bottom:22px;z-index:40;width:60px;height:60px;border-radius:50%;background:var(--wa);
+  color:#fff;display:grid;place-items:center;box-shadow:0 14px 32px -10px rgba(0,0,0,.55);transition:.15s}
+.fab:hover{background:var(--wa-escuro);transform:scale(1.06)}
+.fab svg{width:32px;height:32px}
+.mbar{display:none}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:80;background:rgba(9,12,17,.95);display:none;align-items:center;justify-content:center;padding:20px}
+.lb.open{display:flex}
+.lb-fig{max-width:min(1060px,94vw);max-height:88vh;display:flex;flex-direction:column;gap:12px;position:relative}
+.lb-fig img,.lb-fig .fb{max-width:100%;max-height:76vh;object-fit:contain;margin-inline:auto;border-radius:2px}
+.lb-fig .fb{width:min(680px,88vw);height:56vh}
+.lb-meta{display:flex;justify-content:space-between;gap:16px;font-family:var(--f-mono);font-size:.78rem;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--claro)}
+.lb-meta .code{color:var(--latao)}
+.lb-meta .count{color:var(--claro-2)}
+.lb-btn{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;
+  border:1px solid var(--linha-d);background:rgba(20,28,38,.7);color:#fff;cursor:pointer;display:grid;place-items:center}
+.lb-btn:hover{background:rgba(30,40,54,.9)}.lb-btn svg{width:24px;height:24px}
+.lb-prev{left:-6px}.lb-next{right:-6px}
+.lb-x{position:fixed;top:18px;right:18px;width:48px;height:48px;border-radius:50%;border:1px solid var(--linha-d);
+  background:rgba(20,28,38,.7);color:#fff;cursor:pointer;display:grid;place-items:center}
+.lb-x svg{width:24px;height:24px}
+
+/* reveal + foco */
+.rev{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.rev.in{opacity:1;transform:none}
+a:focus-visible,button:focus-visible,.serv:focus-visible,.plate:focus-visible,.wa:focus-visible{
+  outline:3px solid var(--latao);outline-offset:3px}
+
+/* ============================================================
+   ===== MOBILE — experiência revista por seção (≤ 720px) =====
+   O desktop segue editorial; o mobile é direto, visual e comercial.
+   ============================================================ */
+@media (max-width:720px){
+  .band{padding-block:clamp(52px,13vw,72px)}
+  .chap{margin-bottom:24px}
+  .chap-t{font-size:clamp(2.3rem,10vw,3.2rem)}
+  .brand small{display:none}
+  .idx{display:none!important}                 /* índice lateral: só desktop */
+  .top .wa{display:none}                        /* header sem botão: a barra fixa cobre isso */
+
+  /* --- HERO: só foto + o quê + título + texto curto + 1 CTA + avaliação --- */
+  .hero{min-height:88svh;align-items:flex-end}
+  .hero-media::after{background:linear-gradient(180deg,rgba(10,14,20,.45),rgba(10,14,20,.3) 38%,rgba(10,14,20,.94))}
+  .hero .wrap{padding-block:0 30px}
+  .hero-grid{display:none}                      /* grade decorativa fora no mobile */
+  .hero-tl,.hero-stamp,.hero-datum{display:none}/* coordenadas, carimbo e datum fora */
+  .hero .linkcta{display:none}                  /* remove CTA secundário concorrente */
+  .hero .kicker{font-size:.68rem;letter-spacing:.16em}
+  .hero .kicker::before{width:20px}
+  .hero h1{font-size:clamp(2.6rem,12.5vw,3.9rem);margin-top:14px;max-width:100%}
+  .hero .sub{font-size:1.02rem;margin:16px 0 22px;max-width:100%}
+  .hero-cta{gap:0}
+  .hero-cta .wa{width:100%}
+  .hero-rate{display:flex;align-items:center;gap:9px;margin-top:18px;flex-wrap:wrap;
+    font-family:var(--f-mono);font-size:.78rem;letter-spacing:.03em;color:var(--claro)}
+  .hero-rate .stars svg{width:15px;height:15px}
+  .hero-rate b{color:#fff}
+
+  /* --- SERVIÇOS: linhas largas, confortáveis, sem depender de hover --- */
+  .serv{grid-template-columns:auto 1fr auto;gap:14px;padding:20px 2px;min-height:76px}
+  .serv-main h3{font-size:clamp(1.5rem,6.5vw,2rem)}
+  .serv-main p{font-size:.95rem;opacity:1}
+  .serv-arrow{width:42px;height:42px}
+  .serv-aside p{font-size:1rem}
+
+  /* --- PORTFÓLIO: 1ª obra grande, resto em coluna com respiro --- */
+  .folio{grid-template-columns:1fr;grid-auto-rows:auto;gap:14px}
+  .plate{grid-column:1!important;grid-row:auto!important;aspect-ratio:3/2}
+  .p-hero{aspect-ratio:4/5}                      /* obra principal maior */
+  .plate::before{opacity:1}                      /* legenda sempre legível */
+  .plate .code{font-size:.74rem}
+  .plate .ttl{font-size:1.4rem}
+  .plate .loc{font-size:.72rem}
+  .plate .see{display:none}
+
+  /* --- PROVA SOCIAL --- */
+  .prova .wrap{grid-template-columns:1fr;gap:26px;justify-items:start}
+  .prova-quote blockquote{font-size:clamp(1.6rem,7vw,2.2rem)}
+
+  /* --- CTA final --- */
+  .cta h2{font-size:clamp(2.6rem,11vw,3.6rem)}
+
+  /* --- WhatsApp: barra fixa (some o FAB) --- */
+  .fab{display:none}
+  .mbar{display:block;position:fixed;left:0;right:0;bottom:0;z-index:40;
+    padding:9px 14px calc(9px + env(safe-area-inset-bottom));
+    background:var(--preto);border-top:1px solid var(--linha-d);box-shadow:0 -8px 24px -12px rgba(0,0,0,.6)}
+  .mbar .wa{width:100%;min-height:54px}
+  /* espaço pra barra fixa não cobrir o footer (altura do botão + paddings + safe area) */
+  body{padding-bottom:calc(74px + env(safe-area-inset-bottom))}
+
+  .lb-btn{width:44px;height:44px}.lb-prev{left:2px}.lb-next{right:2px}
+  .lb-meta{flex-direction:column;gap:4px}
+}
+
+/* telas muito estreitas (360px): segura os títulos display */
+@media (max-width:380px){
+  .hero h1{font-size:11.4vw}
+  .chap-t{font-size:2.15rem}
+  .passos-t{font-size:2.1rem}
+  .cta h2{font-size:2.4rem}
+  .serv-main h3{font-size:1.42rem}
+}
+
+/* nenhuma palavra longa deve furar a viewport */
+.hero h1,.chap-t,.passos-t,.cta h2,.serv-main h3,.prova-quote blockquote,.plate .ttl{overflow-wrap:break-word}
+
+@media (prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto!important}
+  .rev{opacity:1;transform:none;transition:none}
+  .plate img,.serv,.serv-main h3,.serv-arrow,.serv-thumb,.wa,.fab,.linkcta svg{transition:none}
+  .hero-scroll svg{animation:none}
+}
+
+/* impressão (o preview ainda exporta em PDF) */
+@media print{
+  @page{size:A4;margin:12mm}
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+  .fab,.mbar,.idx,.lb,.hero-cta,.top .wa,.hero-scroll,.serv-arrow{display:none!important}
+  .hero{min-height:auto}.band{padding-block:22px}
+  .serv,.plate,.passos li,.sobre .wrap{break-inside:avoid}
+  .hero-grid,.hero-media::after{opacity:.4}
+  .rev{opacity:1;transform:none}
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================================================
+     ▚▚▚  CONFIGURAÇÃO DA EMPRESA — edite SÓ este objeto  ▚▚▚
+     Alimenta a página inteira: textos, contato, WhatsApp, serviços,
+     portfólio, depoimentos, cores e SEO. (Fontes: no :root.)
+========================================================= -->
+<script>
+const empresa = {
+  /* IDENTIDADE */
+  nome:"Ferraço Ferro e Aço",
+  cidade:"São Bento do Sul",
+  estado:"SC",
+  regiao:"São Bento do Sul e região",
+  coordenadas:"26°15′S · 49°23′O",          // localização da cidade (não é dado inventado da empresa)
+
+  /* CONTATO */
+  whatsapp:"5547984045754",                  // só números, com 55
+  telefoneExibido:"(47) 98404-5754",
+  vendedor:"Maicon",
+  telVendedor:"(47) 99975-6129",
+  whatsVendedor:"5547999756129",
+  endereco:"Estrada Cruzeiro, 1245 — Bairro Cruzeiro, São Bento do Sul – SC",
+  horario:"Seg a Sex · 08h–18h · Sáb 08h–12h",
+  instagram:"https://www.instagram.com/ferracosbs/",
+  siteOficial:"https://www.ferracosbs.com.br/",
+  googleMaps:"https://www.google.com/maps/search/?api=1&query=Ferra%C3%A7o+Ferro+e+A%C3%A7o+S%C3%A3o+Bento+do+Sul",
+
+  /* PROVA SOCIAL (Google) — nunca invente números */
+  notaGoogle:"5,0",
+  numAvaliacoes:"",
+
+  /* MENSAGEM PADRÃO DO WHATSAPP */
+  msgPadrao:"Olá! Vim pelo site da Ferraço e gostaria de solicitar um orçamento.",
+
+  /* CORES (opcional: sobrescrevem o :root) */
+  corPrimaria:"#10233f",
+  corSecundaria:"#4d86d6",
+
+  /* SEO */
+  seoTitle:"Ferraço Ferro e Aço — Distribuidora de ferro e aço em São Bento do Sul (SC)",
+  metaDescription:"Chapas, barras, tubos, perfis, cantoneiras e aços especiais em São Bento do Sul (SC). Estoque diversificado para construção, serralheria, mecânica e indústria. Orçamento pelo WhatsApp.",
+
+  /* PRODUTOS — a linha inteira leva pro WhatsApp com a msg do produto.
+     img (opcional): foto contextual que aparece no hover em imagens/ */
+  servicos:[
+    { nome:"Chapas",           desc:"Finas a frio (FF) e a quente (FQ), grossas, frisadas, xadrez, expandidas, zincadas, alumínio e inox.", img:"imagens/chapas-dobradas.jpg" },
+    { nome:"Barras de ferro",  desc:"Ferro chato, cantoneiras, redondo, quadrado e sextavado.", img:"imagens/cantoneiras.jpg" },
+    { nome:"Tubos e perfis",   desc:"Tubos redondos, quadrados e retangulares; galvanizados, Schedule e DIN 2440; perfis U (normal e enrijecido), vigas U e I.", img:"imagens/perfil-u.jpg" },
+    { nome:"Aços especiais",   desc:"Inox 304, VC 131, 8620, 8640 e 4340.", img:"imagens/tubos-barras.jpg" },
+    { nome:"Equipamentos e acessórios", desc:"Máquinas, ferramentas elétricas e manuais, acessórios para serralheria, funilaria e marcenaria.", img:"imagens/tubos.jpg" }
+  ],
+
+  /* CATÁLOGO/ESTOQUE — fotos reais dos produtos.
+     destaque:true => foto principal (grande). */
+  portfolio:[
+    { img:"imagens/perfil-u.jpg",       tipo:"Perfis U enrijecido",   local:"Construção e estrutura", destaque:true },
+    { img:"imagens/cantoneiras.jpg",    tipo:"Cantoneiras / ferro chato", local:"Serralheria" },
+    { img:"imagens/tubos.jpg",          tipo:"Tubos redondos e quadrados", local:"Estoque" },
+    { img:"imagens/chapas-dobradas.jpg",tipo:"Chapas cortadas e dobradas", local:"Sob medida" },
+    { img:"imagens/tubos-barras.jpg",   tipo:"Tubos, barras e redondos",   local:"Mecânica e indústria" }
+  ],
+
+  /* DEPOIMENTOS — use os reais do Google. Vazio => a seção some. */
+  depoimentos:[]
+};
+window.empresa = empresa;
+
+</script>
+
+<!-- índice lateral -->
+<nav class="idx" aria-label="Seções">
+  <a href="#s0" data-idx>00</a><a href="#s2" data-idx>02</a><a href="#s3" data-idx>03</a>
+  <a href="#s4" data-idx>04</a><a href="#s5" data-idx>05</a><a href="#s6" data-idx>06</a>
+</nav>
+
+<!-- ================= HEADER ================= -->
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#s0" aria-label="Início — Ferraço Ferro e Aço">
+      <img class="brand-logo" src="imagens/logo-ferraco-branco.png" alt="Ferraço Ferro e Aço" width="200" height="60" decoding="async">
+    </a>
+    <nav>
+      <a class="navlink" href="#s2">Produtos</a>
+      <a class="navlink" href="#s3">Estoque</a>
+      <a class="navlink" href="#s5">A empresa</a>
+      <a class="wa" data-wa href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.6.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.6-1.5-.9-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.3 0 1.4 1 2.7 1.2 2.9.1.2 2 3.1 5 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>Orçamento</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= 00 · HERO ================= -->
+<section class="hero" id="s0">
+  <div class="hero-media">
+    <img src="imagens/foto-hero.jpg" alt="Estoque de tubos e perfis de aço da Ferraço" loading="eager" decoding="async">
+  </div>
+  <div class="hero-grid" aria-hidden="true"></div>
+
+  <div class="hero-tl"><div class="wrap">
+    <p class="hero-coord" data-hero-coord>26°15′S · 49°23′O &nbsp;/&nbsp; <b>São Bento do Sul – SC</b></p>
+  </div></div>
+  <div class="hero-stamp">
+    <b data-empresa="notaGoogle">5,0</b>
+    <span class="stars" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.7 1.4 6.9L12 17.8 5.8 20.9 7.2 14 2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.7 1.4 6.9L12 17.8 5.8 20.9 7.2 14 2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.7 1.4 6.9L12 17.8 5.8 20.9 7.2 14 2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.7 1.4 6.9L12 17.8 5.8 20.9 7.2 14 2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.7 1.4 6.9L12 17.8 5.8 20.9 7.2 14 2 9.3l7-.8z"/></svg></span><br>
+    <span>Avaliação Google</span>
+  </div>
+
+  <div class="wrap">
+    <span class="kicker">Ferro &amp; Aço · Pronta entrega</span>
+    <h1>Ferro e aço<br><em>na medida certa.</em></h1>
+    <p class="sub">Chapas, barras, tubos, perfis e aços especiais em estoque — para construção, serralheria, mecânica e indústria em São Bento do Sul e região.</p>
+    <div class="hero-cta">
+      <a class="wa wa--lg" data-wa href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.6.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.6-1.5-.9-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.3 0 1.4 1 2.7 1.2 2.9.1.2 2 3.1 5 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>Pedir orçamento no WhatsApp</a>
+      <a class="linkcta" href="#s3">Ver produtos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+
+    <!-- prova social simples só no mobile (no desktop fica o carimbo no canto) -->
+    <p class="hero-rate">
+      <span class="stars" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.7 1.4 6.9L12 17.8 5.8 20.9 7.2 14 2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.7 1.4 6.9L12 17.8 5.8 20.9 7.2 14 2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.7 1.4 6.9L12 17.8 5.8 20.9 7.2 14 2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.7 1.4 6.9L12 17.8 5.8 20.9 7.2 14 2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.7 1.4 6.9L12 17.8 5.8 20.9 7.2 14 2 9.3l7-.8z"/></svg></span>
+      <span><b data-empresa="notaGoogle">5,0</b> de avaliação no Google</span>
+    </p>
+
+    <div class="hero-datum">
+      <div class="row">
+        <span>Chapas</span><span>Barras</span><span>Tubos &amp; perfis</span><span>Aços especiais</span>
+        <span>Atende <b data-empresa="regiao">São Bento do Sul e região</b></span>
+        <span class="hero-scroll">Role <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 01 · COMO FUNCIONA ================= -->
+<section class="band band--light s-passos" id="s1">
+  <div class="wrap">
+    <div class="passos-head rev">
+      <span class="kicker">Como comprar</span>
+      <h2 class="passos-t">Do pedido<br>à entrega.</h2>
+      <p>Simples e rápido: você manda a lista pelo WhatsApp, a gente confirma o estoque e o valor, e você retira ou recebe.</p>
+    </div>
+    <ol class="passos rev">
+      <li><span class="passo-n">01</span><div><h3>Manda a lista</h3><p>Envie o material, a bitola e a quantidade pelo WhatsApp — ou a foto/planta do que precisa.</p></div></li>
+      <li><span class="passo-n">02</span><div><h3>Orçamento na hora</h3><p>Confirmamos o que tem em estoque e passamos preço e prazo, sem compromisso.</p></div></li>
+      <li><span class="passo-n">03</span><div><h3>Retira ou entrega</h3><p>Você retira na loja no Bairro Cruzeiro ou combina a entrega na sua obra.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= 02 · SERVIÇOS ================= -->
+<section class="band band--dark s-serv" id="s2">
+  <div class="wrap">
+    <div class="serv-grid">
+      <div class="serv-aside rev">
+        <div class="chap"><span class="chap-n">02</span><h2 class="chap-t">Produtos</h2></div>
+        <p>Toque na linha que você precisa — abre o WhatsApp com a mensagem pronta pra você só enviar.</p>
+      </div>
+      <div class="serv-list rev" id="serv-list"><!-- gerado de empresa.servicos --></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 03 · PORTFÓLIO ================= -->
+<section class="band band--light" id="s3">
+  <div class="wrap">
+    <div class="chap rev">
+      <span class="chap-n">03</span><h2 class="chap-t">Estoque</h2>
+      <span class="chap-meta">Toque para ampliar</span>
+    </div>
+    <div class="folio rev" id="folio"><!-- gerado de empresa.portfolio --></div>
+  </div>
+</section>
+
+<!-- ================= 04 · PROVA SOCIAL ================= -->
+<section class="band band--black prova" id="s4">
+  <div class="wrap">
+    <div class="selo rev" role="img" aria-label="Nota 5,0 no Google">
+      <div>
+        <div class="n" data-empresa="notaGoogle">5,0</div>
+        <div class="stars" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.7 1.4 6.9L12 17.8 5.8 20.9 7.2 14 2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.7 1.4 6.9L12 17.8 5.8 20.9 7.2 14 2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.7 1.4 6.9L12 17.8 5.8 20.9 7.2 14 2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.7 1.4 6.9L12 17.8 5.8 20.9 7.2 14 2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.7 1.4 6.9L12 17.8 5.8 20.9 7.2 14 2 9.3l7-.8z"/></svg></div>
+        <div class="lb"><svg class="gmark" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22 12.2c0-.7-.1-1.4-.2-2H12v3.8h5.6a4.8 4.8 0 0 1-2.1 3.1v2.6h3.4c2-1.8 3.1-4.5 3.1-7.5z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.7-2.4l-3.4-2.6c-.9.6-2 1-3.3 1-2.6 0-4.7-1.7-5.5-4.1H2.9v2.6A10 10 0 0 0 12 22z"/><path fill="#FBBC05" d="M6.5 13.9a6 6 0 0 1 0-3.8V7.5H2.9a10 10 0 0 0 0 9z"/><path fill="#EA4335" d="M12 5.9c1.5 0 2.8.5 3.8 1.5l2.9-2.9A10 10 0 0 0 2.9 7.5l3.6 2.6C7.3 7.6 9.4 5.9 12 5.9z"/></svg> Google</div>
+      </div>
+    </div>
+    <div class="prova-quote rev" id="prova-quote"><!-- 1º depoimento --></div>
+  </div>
+  <div class="wrap prova-sec rev" id="prova-sec" style="padding-top:0"><!-- 2º depoimento + link --></div>
+</section>
+
+<!-- ================= 05 · SOBRE (title block) ================= -->
+<section class="band band--paper2 sobre" id="s5">
+  <div class="wrap">
+    <div class="sobre-media">
+      <img src="imagens/oficina.jpg" alt="Tubos, barras e perfis de aço em estoque na Ferraço" loading="lazy" decoding="async">
+    </div>
+    <div class="sobre-body">
+      <div class="chap"><span class="chap-n">05</span><h2 class="chap-t">A empresa</h2></div>
+      <p>A <b>Ferraço Ferro e Aço</b> é uma distribuidora de <span data-empresa="cidade">São Bento do Sul</span> com estoque diversificado para construção civil, serralheria, mecânica e indústria. Chapas, barras, tubos, perfis e aços especiais — com atendimento direto e pronta entrega.</p>
+      <table class="titleblock" aria-label="Dados da empresa">
+        <tr><th>Empresa</th><td data-empresa="nome">Ferraço Ferro e Aço</td></tr>
+        <tr><th>Atendimento</th><td data-empresa="regiao">São Bento do Sul e região</td></tr>
+        <tr><th>Endereço</th><td data-empresa="endereco">Estrada Cruzeiro, 1245 — Bairro Cruzeiro</td></tr>
+        <tr><th>Horário</th><td data-empresa="horario">Seg a Sex · 08h–18h</td></tr>
+        <tr><th>Loja / WhatsApp</th><td><a data-tel href="#" style="border-bottom:1px solid var(--linha-l)"><span data-empresa="telefoneExibido">(47) 98404-5754</span></a></td></tr>
+        <tr><th>Vendas</th><td><a data-wa-vend href="#" style="border-bottom:1px solid var(--linha-l)">Maicon · <span data-empresa="telVendedor">(47) 99975-6129</span></a></td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 06 · CTA FINAL ================= -->
+<section class="band band--black cta" id="s6">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="wrap">
+    <span class="kicker" style="justify-content:center">Fale agora</span>
+    <h2 style="margin-top:20px">Manda a lista.<br><em>A gente cota.</em></h2>
+    <p>Envie o material, a bitola e a quantidade pelo WhatsApp. Você recebe preço e prazo, sem compromisso.</p>
+    <a class="wa wa--lg" data-wa href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.6.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.6-1.5-.9-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.3 0 1.4 1 2.7 1.2 2.9.1.2 2 3.1 5 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>Pedir orçamento no WhatsApp</a>
+    <p class="cta-tel">ou fale com Maicon (Vendas) <a data-wa-vend href="#"><span data-empresa="telVendedor">(47) 99975-6129</span></a></p>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="brand" href="#s0" style="margin-bottom:18px"><img class="brand-logo" src="imagens/logo-ferraco-branco.png" alt="Ferraço Ferro e Aço" style="height:52px"></a>
+      <p style="max-width:36ch;font-size:.95rem;margin:0">Distribuidora de ferro e aço em <span data-empresa="cidade">São Bento do Sul</span> (<span data-empresa="estado">SC</span>) e região — chapas, barras, tubos, perfis e aços especiais.</p>
+    </div>
+    <div>
+      <h4>Contato</h4>
+      <p class="row"><a data-wa href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.6.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.6-1.5-.9-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.3 0 1.4 1 2.7 1.2 2.9.1.2 2 3.1 5 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>Loja · <span data-empresa="telefoneExibido">(47) 98404-5754</span></a></p>
+      <p class="row"><a data-wa-vend href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.6.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.6-1.5-.9-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.3 0 1.4 1 2.7 1.2 2.9.1.2 2 3.1 5 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>Vendas · Maicon · <span data-empresa="telVendedor">(47) 99975-6129</span></a></p>
+      <p class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg><span data-empresa="endereco">Estrada Cruzeiro, 1245 — Bairro Cruzeiro</span></p>
+    </div>
+    <div>
+      <h4>Atendimento</h4>
+      <p class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span data-empresa="horario">Seg a Sex · 08h–18h · Sáb 08h–12h</span></p>
+      <p class="row"><a data-maps href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 20 3 17V4l6 3 6-3 6 3v13l-6-3-6 3zM9 7v13M15 4v13"/></svg>Ver no Google Maps</a></p>
+      <p class="row"><a data-instagram href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@ferracosbs</a></p>
+      <p class="row"><a data-site href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18z"/></svg>ferracosbs.com.br</a></p>
+    </div>
+  </div>
+  <div class="foot-b"><div class="wrap">
+    <span>© <span id="ano"></span> <span data-empresa="nome">Ferraço Ferro e Aço</span> · <span data-empresa="cidade">São Bento do Sul</span>, <span data-empresa="estado">SC</span></span>
+    <span>Chapas · Barras · Tubos &amp; perfis · Aços especiais</span>
+  </div></div>
+</footer>
+
+<a class="fab" data-wa href="#" aria-label="Falar no WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.6.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.6-1.5-.9-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.3 0 1.4 1 2.7 1.2 2.9.1.2 2 3.1 5 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg></a>
+<div class="mbar"><a class="wa" data-wa href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.6.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.6-1.5-.9-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.3 0 1.4 1 2.7 1.2 2.9.1.2 2 3.1 5 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>Pedir orçamento no WhatsApp</a></div>
+
+<noscript><div style="position:fixed;left:0;right:0;bottom:0;background:#16994f;color:#fff;text-align:center;padding:14px;font-family:sans-serif;z-index:99"><a href="https://wa.me/5547984045754?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento." style="color:#fff;font-weight:700">Falar no WhatsApp — (47) 98404-5754</a></div></noscript>
+
+<!-- lightbox -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Visualização de obra">
+  <button class="lb-x" id="lb-x" aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  <button class="lb-btn lb-prev" id="lb-prev" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+  <figure class="lb-fig" id="lb-fig"></figure>
+  <button class="lb-btn lb-next" id="lb-next" aria-label="Próxima"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var E=window.empresa||{}, root=document.documentElement, enc=encodeURIComponent;
+  var STAR='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.7 1.4 6.9L12 17.8 5.8 20.9 7.2 14 2 9.3l7-.8z"/></svg>';
+  function wa(msg){return 'https://wa.me/'+(E.whatsapp||'')+'?text='+enc(msg||E.msgPadrao||'');}
+
+  /* cores / seo / textos */
+  if(E.corPrimaria)root.style.setProperty('--cor-primaria',E.corPrimaria);
+  if(E.corSecundaria)root.style.setProperty('--cor-secundaria',E.corSecundaria);
+  if(E.seoTitle)document.title=E.seoTitle;
+  if(E.metaDescription){var m=document.querySelector('meta[name="description"]');if(m)m.setAttribute('content',E.metaDescription);}
+  document.querySelectorAll('[data-empresa]').forEach(function(el){var k=el.getAttribute('data-empresa');
+    if(E[k]!=null&&typeof E[k]!=='object')el.textContent=E[k];});
+  var hc=document.querySelector('[data-hero-coord]');
+  if(hc)hc.innerHTML=(E.coordenadas||'')+' &nbsp;/&nbsp; <b>'+(E.cidade||'')+' – '+(E.estado||'')+'</b>';
+
+  /* links */
+  document.querySelectorAll('[data-wa]').forEach(function(a){a.href=wa(a.getAttribute('data-wa-msg'));a.target='_blank';a.rel='noopener';});
+  document.querySelectorAll('[data-tel]').forEach(function(a){a.href='tel:+'+(E.whatsapp||'');});
+  document.querySelectorAll('[data-wa-vend]').forEach(function(a){
+    a.href='https://wa.me/'+(E.whatsVendedor||'')+'?text='+enc(E.msgPadrao||'');a.target='_blank';a.rel='noopener';});
+  document.querySelectorAll('[data-tel-vend]').forEach(function(a){a.href='tel:+'+(E.whatsVendedor||'');});
+  document.querySelectorAll('[data-instagram]').forEach(function(a){if(E.instagram){a.href=E.instagram;a.target='_blank';a.rel='noopener';}});
+  document.querySelectorAll('[data-site]').forEach(function(a){if(E.siteOficial){a.href=E.siteOficial;a.target='_blank';a.rel='noopener';}});
+  document.querySelectorAll('[data-maps]').forEach(function(a){if(E.googleMaps){a.href=E.googleMaps;a.target='_blank';a.rel='noopener';}});
+
+  /* fallback de imagem (placeholder só se o arquivo faltar) */
+  function fb(img,rot,dark){img.addEventListener('error',function(){
+    var d=document.createElement('div');d.className='fb'+(dark?' dark':'');
+    d.setAttribute('role','img');d.setAttribute('aria-label',rot||'Foto');d.textContent='FOTO: '+(rot||'');
+    if(img.parentNode)img.parentNode.replaceChild(d,img);},{once:true});}
+  var hImg=document.querySelector('.hero-media img'); if(hImg)fb(hImg,'estoque de aço',true);
+  var sImg=document.querySelector('.sobre-media img'); if(sImg)fb(sImg,'produtos em estoque',false);
+
+  /* SERVIÇOS */
+  var sl=document.getElementById('serv-list'), servs=Array.isArray(E.servicos)?E.servicos:[];
+  if(sl){sl.innerHTML=servs.map(function(s,i){
+    var msg='Olá! Vim pelo site da '+(E.nome||'empresa')+' e gostaria de um orçamento de '+s.nome+'.';
+    var n=(i+1<10?'0':'')+(i+1);
+    var thumb=s.img?('<span class="serv-thumb"><img src="'+s.img+'" alt="" loading="lazy" decoding="async"></span>'):'';
+    return '<a class="serv" href="'+wa(msg)+'" target="_blank" rel="noopener">'
+      +'<span class="serv-n">'+n+'</span>'
+      +'<span class="serv-main"><h3>'+s.nome+'</h3><p>'+(s.desc||'')+'</p></span>'
+      +'<span class="serv-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>'
+      +thumb+'</a>';}).join('');
+    sl.querySelectorAll('.serv-thumb img').forEach(function(img,i){fb(img,(servs[i]&&servs[i].nome)||'produto',true);});
+  }
+
+  /* PORTFÓLIO — spans editoriais por posição */
+  var folio=document.getElementById('folio'), fotos=Array.isArray(E.portfolio)?E.portfolio:[];
+  var SPAN=['p-hero','p-tall','p-wide','p-std','p-std2','p-wide'];
+  if(folio){
+    folio.innerHTML=fotos.map(function(f,i){
+      var cls=f.destaque?'p-hero':(SPAN[i]||'p-std');
+      var code='REF. '+((i+1<10?'0':'')+(i+1));
+      var lazy=i===0?'eager':'lazy';
+      return '<figure class="plate '+cls+'" data-i="'+i+'" tabindex="0" role="button" aria-label="Ampliar: '+(f.tipo||'produto')+'">'
+        +'<img src="'+f.img+'" alt="'+(f.tipo||'Produto em estoque')+' — '+(f.local||'')+'" loading="'+lazy+'" decoding="async">'
+        +'<figcaption><span><span class="code">'+code+'</span><span class="ttl">'+(f.tipo||'')+'</span><span class="loc">'+(f.local||'')+'</span></span>'
+        +'<span class="see"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M14 10l7-7M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"/></svg></span>'
+        +'</figcaption></figure>';}).join('');
+    folio.querySelectorAll('img').forEach(function(img,i){fb(img,(fotos[i]&&fotos[i].tipo)||'obra',false);});
+  }
+
+  /* DEPOIMENTOS */
+  var dq=document.getElementById('prova-quote'), ps=document.getElementById('prova-sec'),
+      deps=Array.isArray(E.depoimentos)?E.depoimentos:[], sec=document.getElementById('s4');
+  if(deps.length===0&&sec){sec.style.display='none';}
+  else{
+    if(dq&&deps[0])dq.innerHTML='<blockquote>“'+deps[0].texto+'”</blockquote><p class="who"><b>'+(deps[0].autor||'Cliente')+'</b> · '+(deps[0].fonte||'Google')+'</p>';
+    if(ps){
+      var extra=deps[1]?('<p>“'+deps[1].texto+'” — '+(deps[1].autor||'Cliente')+(deps[1].exemplo?' <span class="tag-ex">(exemplo — trocar)</span>':'')+'</p>'):'<p></p>';
+      ps.innerHTML=extra+'<a class="linkcta" data-maps href="#" style="color:#fff">Ver no Google <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>';
+      var mp=ps.querySelector('[data-maps]'); if(mp&&E.googleMaps){mp.href=E.googleMaps;mp.target='_blank';mp.rel='noopener';}
+    }
+  }
+
+  /* JSON-LD */
+  try{var ld={"@context":"https://schema.org","@type":"HardwareStore",name:E.nome,
+    image:(fotos[0]&&fotos[0].img)||"imagens/foto-hero.jpg",telephone:"+"+(E.whatsapp||""),
+    url:E.siteOficial||undefined,
+    address:{"@type":"PostalAddress",streetAddress:E.endereco,addressLocality:E.cidade,addressRegion:E.estado,addressCountry:"BR"},
+    areaServed:E.regiao};
+    if(E.numAvaliacoes){ld.aggregateRating={"@type":"AggregateRating",ratingValue:String(E.notaGoogle||"").replace(',','.'),reviewCount:String(E.numAvaliacoes)};}
+    var sc=document.createElement('script');sc.type='application/ld+json';sc.textContent=JSON.stringify(ld);document.head.appendChild(sc);}catch(e){}
+
+  var ano=document.getElementById('ano'); if(ano)ano.textContent=new Date().getFullYear();
+
+  /* reveal + scrollspy */
+  var reduz=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if('IntersectionObserver' in window){
+    if(!reduz){var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+      document.querySelectorAll('.rev').forEach(function(el){io.observe(el);});}
+    else document.querySelectorAll('.rev').forEach(function(el){el.classList.add('in');});
+    var links=[].slice.call(document.querySelectorAll('.idx a'));
+    var spy=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){
+      var id=e.target.id;links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+id);});}});},{rootMargin:'-45% 0px -50% 0px'});
+    ['s0','s2','s3','s4','s5','s6'].forEach(function(id){var el=document.getElementById(id);if(el)spy.observe(el);});
+  } else document.querySelectorAll('.rev').forEach(function(el){el.classList.add('in');});
+
+  /* LIGHTBOX */
+  var lb=document.getElementById('lb'),fig=document.getElementById('lb-fig'),
+      bx=document.getElementById('lb-x'),bp=document.getElementById('lb-prev'),bn=document.getElementById('lb-next'),
+      cur=0,last=null;
+  function draw(i){var f=fotos[i];if(!f)return;
+    fig.innerHTML='<img src="'+f.img+'" alt="'+(f.tipo||'')+'">'
+      +'<figcaption class="lb-meta"><span class="code">REF. '+((i+1<10?'0':'')+(i+1))+' · '+(f.tipo||'')+'</span>'
+      +'<span class="count">'+(f.local||'')+' &nbsp; '+(i+1)+'/'+fotos.length+'</span></figcaption>';
+    var im=fig.querySelector('img');
+    im.addEventListener('error',function(){var d=document.createElement('div');d.className='fb';d.textContent='FOTO: '+(f.tipo||'');fig.replaceChild(d,im);},{once:true});}
+  function open(i){cur=i;last=document.activeElement;draw(cur);lb.classList.add('open');document.body.style.overflow='hidden';bx.focus();}
+  function close(){lb.classList.remove('open');document.body.style.overflow='';if(last)last.focus();}
+  function go(s){cur=(cur+s+fotos.length)%fotos.length;draw(cur);}
+  if(folio){
+    folio.addEventListener('click',function(e){var f=e.target.closest('figure');if(f)open(+f.dataset.i);});
+    folio.addEventListener('keydown',function(e){var f=e.target.closest('figure');
+      if(f&&(e.key==='Enter'||e.key===' ')){e.preventDefault();open(+f.dataset.i);}});
+  }
+  bx.onclick=close;bp.onclick=function(){go(-1);};bn.onclick=function(){go(1);};
+  lb.addEventListener('click',function(e){if(e.target===lb)close();});
+  document.addEventListener('keydown',function(e){if(!lb.classList.contains('open'))return;
+    if(e.key==='Escape')close();else if(e.key==='ArrowRight')go(1);else if(e.key==='ArrowLeft')go(-1);});
+})();
+</script>
+</body>
+</html>
