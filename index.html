@@ -10,7 +10,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Ferraço Ferro e Aço — São Bento do Sul (SC)">
 <meta property="og:description" content="Ferro e aço na medida certa, com pronta entrega. Peça seu orçamento pelo WhatsApp.">
-<meta property="og:image" content="imagens/foto-hero.jpg">
+<meta property="og:image" content="imagens/hero.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -452,11 +452,11 @@ const empresa = {
   /* CONTATO */
   whatsapp:"5547984045754",                  // só números, com 55
   telefoneExibido:"(47) 98404-5754",
-  vendedor:"Maicon",
-  telVendedor:"(47) 99975-6129",
-  whatsVendedor:"5547999756129",
-  endereco:"Estrada Cruzeiro, 1245 — Bairro Cruzeiro, São Bento do Sul – SC",
-  horario:"Seg a Sex · 08h–18h · Sáb 08h–12h",
+  vendedor:"Joyce ou Jeferson",
+  telVendedor:"(47) 98404-5754",
+  whatsVendedor:"5547984045754",
+  endereco:"Rua Antônio Hilgenstieler, 119 — Bairro Bohmerwald, São Bento do Sul – SC · CEP 89287-585",
+  horario:"Seg a Sex · 08h–18h · Sáb 08h–12h",   // ← CONFIRMAR horário real com a Ferraço
   instagram:"https://www.instagram.com/ferracosbs/",
   siteOficial:"https://www.ferracosbs.com.br/",
   googleMaps:"https://www.google.com/maps/search/?api=1&query=Ferra%C3%A7o+Ferro+e+A%C3%A7o+S%C3%A3o+Bento+do+Sul",
@@ -479,21 +479,21 @@ const empresa = {
   /* PRODUTOS — a linha inteira leva pro WhatsApp com a msg do produto.
      img (opcional): foto contextual que aparece no hover em imagens/ */
   servicos:[
-    { nome:"Chapas",           desc:"Finas a frio (FF) e a quente (FQ), grossas, frisadas, xadrez, expandidas, zincadas, alumínio e inox.", img:"imagens/chapas-dobradas.jpg" },
-    { nome:"Barras de ferro",  desc:"Ferro chato, cantoneiras, redondo, quadrado e sextavado.", img:"imagens/cantoneiras.jpg" },
-    { nome:"Tubos e perfis",   desc:"Tubos redondos, quadrados e retangulares; galvanizados, Schedule e DIN 2440; perfis U (normal e enrijecido), vigas U e I.", img:"imagens/perfil-u.jpg" },
-    { nome:"Aços especiais",   desc:"Inox 304, VC 131, 8620, 8640 e 4340.", img:"imagens/tubos-barras.jpg" },
-    { nome:"Equipamentos e acessórios", desc:"Máquinas, ferramentas elétricas e manuais, acessórios para serralheria, funilaria e marcenaria.", img:"imagens/tubos.jpg" }
+    { nome:"Chapas",           desc:"Finas a frio (FF) e a quente (FQ), grossas, frisadas, xadrez, expandidas, zincadas, alumínio e inox.", img:"imagens/chapas.jpg" },
+    { nome:"Barras de ferro",  desc:"Ferro chato, cantoneiras, redondo, quadrado e sextavado.", img:"imagens/barras.jpg" },
+    { nome:"Tubos e perfis",   desc:"Tubos redondos, quadrados e retangulares; galvanizados, Schedule e DIN 2440; perfis U (normal e enrijecido), vigas U e I.", img:"imagens/tubos.jpg" },
+    { nome:"Aços especiais",   desc:"Inox 304, VC 131, 8620, 8640 e 4340.", img:"imagens/acos-especiais.jpg" },
+    { nome:"Equipamentos e acessórios", desc:"Máquinas, ferramentas elétricas e manuais, acessórios para serralheria, funilaria e marcenaria.", img:"imagens/equipamentos.jpg" }
   ],
 
   /* CATÁLOGO/ESTOQUE — fotos reais dos produtos.
      destaque:true => foto principal (grande). */
   portfolio:[
-    { img:"imagens/perfil-u.jpg",       tipo:"Perfis U enrijecido",   local:"Construção e estrutura", destaque:true },
-    { img:"imagens/cantoneiras.jpg",    tipo:"Cantoneiras / ferro chato", local:"Serralheria" },
-    { img:"imagens/tubos.jpg",          tipo:"Tubos redondos e quadrados", local:"Estoque" },
-    { img:"imagens/chapas-dobradas.jpg",tipo:"Chapas cortadas e dobradas", local:"Sob medida" },
-    { img:"imagens/tubos-barras.jpg",   tipo:"Tubos, barras e redondos",   local:"Mecânica e indústria" }
+    { img:"imagens/tubos.jpg",          tipo:"Tubos, perfis e vigas",          local:"Construção e estrutura", destaque:true },
+    { img:"imagens/barras.jpg",         tipo:"Barras, cantoneiras e redondos", local:"Serralheria e mecânica" },
+    { img:"imagens/chapas.jpg",         tipo:"Chapas de aço",                  local:"Sob medida" },
+    { img:"imagens/acos-especiais.jpg", tipo:"Aços especiais",                 local:"Inox · VC 131 · 8620 · 8640 · 4340" },
+    { img:"imagens/equipamentos.jpg",   tipo:"Equipamentos e acessórios",      local:"Serralheria e funilaria" }
   ],
 
   /* DEPOIMENTOS — use os reais do Google. Vazio => a seção some. */
@@ -527,7 +527,7 @@ window.empresa = empresa;
 <!-- ================= 00 · HERO ================= -->
 <section class="hero" id="s0">
   <div class="hero-media">
-    <img src="imagens/foto-hero.jpg" alt="Estoque de tubos e perfis de aço da Ferraço" loading="eager" decoding="async">
+    <img src="imagens/hero.jpg" alt="Estoque de tubos e perfis de aço da Ferraço" loading="eager" decoding="async">
   </div>
   <div class="hero-grid" aria-hidden="true"></div>
 
@@ -576,7 +576,7 @@ window.empresa = empresa;
     <ol class="passos rev">
       <li><span class="passo-n">01</span><div><h3>Manda a lista</h3><p>Envie o material, a bitola e a quantidade pelo WhatsApp — ou a foto/planta do que precisa.</p></div></li>
       <li><span class="passo-n">02</span><div><h3>Orçamento na hora</h3><p>Confirmamos o que tem em estoque e passamos preço e prazo, sem compromisso.</p></div></li>
-      <li><span class="passo-n">03</span><div><h3>Retira ou entrega</h3><p>Você retira na loja no Bairro Cruzeiro ou combina a entrega na sua obra.</p></div></li>
+      <li><span class="passo-n">03</span><div><h3>Retira ou entrega</h3><p>Você retira na loja no Bairro Bohmerwald ou combina a entrega na sua obra.</p></div></li>
     </ol>
   </div>
 </section>
@@ -624,7 +624,7 @@ window.empresa = empresa;
 <section class="band band--paper2 sobre" id="s5">
   <div class="wrap">
     <div class="sobre-media">
-      <img src="imagens/oficina.jpg" alt="Tubos, barras e perfis de aço em estoque na Ferraço" loading="lazy" decoding="async">
+      <img src="imagens/estoque.jpg" alt="Tubos, barras e perfis de aço em estoque na Ferraço" loading="lazy" decoding="async">
     </div>
     <div class="sobre-body">
       <div class="chap"><span class="chap-n">05</span><h2 class="chap-t">A empresa</h2></div>
@@ -632,10 +632,10 @@ window.empresa = empresa;
       <table class="titleblock" aria-label="Dados da empresa">
         <tr><th>Empresa</th><td data-empresa="nome">Ferraço Ferro e Aço</td></tr>
         <tr><th>Atendimento</th><td data-empresa="regiao">São Bento do Sul e região</td></tr>
-        <tr><th>Endereço</th><td data-empresa="endereco">Estrada Cruzeiro, 1245 — Bairro Cruzeiro</td></tr>
+        <tr><th>Endereço</th><td data-empresa="endereco">Rua Antônio Hilgenstieler, 119 — Bairro Bohmerwald, São Bento do Sul – SC · CEP 89287-585</td></tr>
         <tr><th>Horário</th><td data-empresa="horario">Seg a Sex · 08h–18h</td></tr>
         <tr><th>Loja / WhatsApp</th><td><a data-tel href="#" style="border-bottom:1px solid var(--linha-l)"><span data-empresa="telefoneExibido">(47) 98404-5754</span></a></td></tr>
-        <tr><th>Vendas</th><td><a data-wa-vend href="#" style="border-bottom:1px solid var(--linha-l)">Maicon · <span data-empresa="telVendedor">(47) 99975-6129</span></a></td></tr>
+        <tr><th>Falar com</th><td><a data-wa-vend href="#" style="border-bottom:1px solid var(--linha-l)"><span data-empresa="vendedor">Joyce ou Jeferson</span></a></td></tr>
       </table>
     </div>
   </div>
@@ -649,7 +649,7 @@ window.empresa = empresa;
     <h2 style="margin-top:20px">Manda a lista.<br><em>A gente cota.</em></h2>
     <p>Envie o material, a bitola e a quantidade pelo WhatsApp. Você recebe preço e prazo, sem compromisso.</p>
     <a class="wa wa--lg" data-wa href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.6.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.6-1.5-.9-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.3 0 1.4 1 2.7 1.2 2.9.1.2 2 3.1 5 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>Pedir orçamento no WhatsApp</a>
-    <p class="cta-tel">ou fale com Maicon (Vendas) <a data-wa-vend href="#"><span data-empresa="telVendedor">(47) 99975-6129</span></a></p>
+    <p class="cta-tel">ou fale com <span data-empresa="vendedor">Joyce ou Jeferson</span> <a data-wa-vend href="#">no WhatsApp</a></p>
   </div>
 </section>
 
@@ -663,8 +663,8 @@ window.empresa = empresa;
     <div>
       <h4>Contato</h4>
       <p class="row"><a data-wa href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.6.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.6-1.5-.9-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.3 0 1.4 1 2.7 1.2 2.9.1.2 2 3.1 5 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>Loja · <span data-empresa="telefoneExibido">(47) 98404-5754</span></a></p>
-      <p class="row"><a data-wa-vend href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.6.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.6-1.5-.9-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.3 0 1.4 1 2.7 1.2 2.9.1.2 2 3.1 5 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>Vendas · Maicon · <span data-empresa="telVendedor">(47) 99975-6129</span></a></p>
-      <p class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg><span data-empresa="endereco">Estrada Cruzeiro, 1245 — Bairro Cruzeiro</span></p>
+      <p class="row"><a data-wa-vend href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.6.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.6-1.5-.9-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.3 0 1.4 1 2.7 1.2 2.9.1.2 2 3.1 5 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>Falar com · <span data-empresa="vendedor">Joyce ou Jeferson</span></a></p>
+      <p class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg><span data-empresa="endereco">Rua Antônio Hilgenstieler, 119 — Bairro Bohmerwald, São Bento do Sul – SC · CEP 89287-585</span></p>
     </div>
     <div>
       <h4>Atendimento</h4>
@@ -773,7 +773,7 @@ window.empresa = empresa;
 
   /* JSON-LD */
   try{var ld={"@context":"https://schema.org","@type":"HardwareStore",name:E.nome,
-    image:(fotos[0]&&fotos[0].img)||"imagens/foto-hero.jpg",telephone:"+"+(E.whatsapp||""),
+    image:(fotos[0]&&fotos[0].img)||"imagens/hero.jpg",telephone:"+"+(E.whatsapp||""),
     url:E.siteOficial||undefined,
     address:{"@type":"PostalAddress",streetAddress:E.endereco,addressLocality:E.cidade,addressRegion:E.estado,addressCountry:"BR"},
     areaServed:E.regiao};
