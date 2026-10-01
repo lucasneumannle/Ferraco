@@ -144,6 +144,10 @@ h1,h2,h3{margin:0;font-weight:400}
 .hero h1 em{font-style:normal;color:var(--latao)}
 .hero .sub{max-width:46ch;font-size:clamp(1.05rem,2.2vw,1.28rem);color:var(--claro);margin:26px 0 30px}
 .hero-cta{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.hero-atendimento{width:fit-content;max-width:660px;margin:22px 0 0;padding:12px 16px;
+  border-left:3px solid var(--latao);background:rgba(16,35,63,.82);color:#fff;
+  font-size:clamp(.92rem,2vw,1rem);line-height:1.45}
+.hero-atendimento strong{color:#fff}
 /* barra datum no rodapé da hero */
 .hero-datum{position:relative;z-index:2;border-top:1px solid var(--linha-d);margin-top:44px}
 .hero-datum .row{display:flex;flex-wrap:wrap;gap:10px 30px;align-items:center;padding-top:16px;
@@ -446,7 +450,7 @@ const empresa = {
   nome:"Ferraço Ferro e Aço",
   cidade:"São Bento do Sul",
   estado:"SC",
-  regiao:"São Bento do Sul e região",
+  regiao:"Santa Catarina e Paraná",
   coordenadas:"26°15′S · 49°23′O",          // localização da cidade (não é dado inventado da empresa)
 
   /* CONTATO */
@@ -549,6 +553,8 @@ window.empresa = empresa;
       <a class="linkcta" href="#s3">Ver produtos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
 
+    <p class="hero-atendimento"><strong>Área de atendimento:</strong> vendemos para Santa Catarina e Paraná. Não atendemos outros estados.</p>
+
     <!-- prova social simples só no mobile (no desktop fica o carimbo no canto) -->
     <p class="hero-rate">
       <span class="stars" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.7 1.4 6.9L12 17.8 5.8 20.9 7.2 14 2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.7 1.4 6.9L12 17.8 5.8 20.9 7.2 14 2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.7 1.4 6.9L12 17.8 5.8 20.9 7.2 14 2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.7 1.4 6.9L12 17.8 5.8 20.9 7.2 14 2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5.2 4.7 1.4 6.9L12 17.8 5.8 20.9 7.2 14 2 9.3l7-.8z"/></svg></span>
@@ -558,7 +564,7 @@ window.empresa = empresa;
     <div class="hero-datum">
       <div class="row">
         <span>Chapas</span><span>Barras</span><span>Tubos &amp; perfis</span><span>Aços especiais</span>
-        <span>Atende <b data-empresa="regiao">São Bento do Sul e região</b></span>
+        <span>Atende <b data-empresa="regiao">Santa Catarina e Paraná</b></span>
         <span class="hero-scroll">Role <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span>
       </div>
     </div>
@@ -631,7 +637,7 @@ window.empresa = empresa;
       <p>A <b>Ferraço Ferro e Aço</b> é uma distribuidora de <span data-empresa="cidade">São Bento do Sul</span> com estoque diversificado para construção civil, serralheria, mecânica e indústria. Chapas, barras, tubos, perfis e aços especiais — com atendimento direto e pronta entrega.</p>
       <table class="titleblock" aria-label="Dados da empresa">
         <tr><th>Empresa</th><td data-empresa="nome">Ferraço Ferro e Aço</td></tr>
-        <tr><th>Atendimento</th><td data-empresa="regiao">São Bento do Sul e região</td></tr>
+        <tr><th>Atendimento</th><td data-empresa="regiao">Santa Catarina e Paraná</td></tr>
         <tr><th>Endereço</th><td data-empresa="endereco">Rua Antônio Hilgenstieler, 119 — Bairro Bohmerwald, São Bento do Sul – SC · CEP 89287-585</td></tr>
         <tr><th>Horário</th><td data-empresa="horario">Seg a Sex · 08h–12h e 13h–17h30</td></tr>
         <tr><th>Loja / WhatsApp</th><td><a data-tel href="#" style="border-bottom:1px solid var(--linha-l)"><span data-empresa="telefoneExibido">(47) 98404-5754</span></a></td></tr>
